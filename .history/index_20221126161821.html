@@ -86,15 +86,8 @@
       <button>Trigger a Global Error</button>
     </section>
   </main>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+
   <script>
-    window.TrackJS && TrackJS.install({ 
-      token: "2bb1af4984b349b59bda3a863c8ef71f"
-      // for more configuration options, see https://docs.trackjs.com
-    });
-  </script>
-  <script>
-    TrackJS.track('Testing TrackJS!');
     class DivideByZeroError extends Error {
       constructor(message) {
         super(message);
@@ -155,19 +148,6 @@
     });
     errorBtns[10].addEventListener('click', () => {
       console.table([document.querySelector('#first-num').value, document.querySelector('#second-num').value, document.querySelector('#operator').value]);
-    });
-    errorBtns[11].addEventListener('click', () => {
-      console.time();
-    });
-    errorBtns[12].addEventListener('click', () => {
-      console.timeEnd();
-    });
-    function exampleFnc(){
-        console.trace();
-    }
-    errorBtns[13].addEventListener('click', exampleFnc);
-    errorBtns[14].addEventListener('click', () => {
-      window.onerror();
     });
     // Start your code here
     // You may move this JS to another file if you wish
